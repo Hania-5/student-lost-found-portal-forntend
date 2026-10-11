@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Lost & Found Campus Portal – Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React web app where students report lost and found items on campus, search them, and get suggestions when a lost item matches a found one.
 
-## Available Scripts
+## Features
+- Report **lost** or **found** items with details and a photo (take a photo or choose from gallery)
+- **Auto-match suggestions**: lost items are matched with found items by category, location and similar name
+- **Home** page with open items, search, and newest/oldest sorting
+- **History** page with all items, search, filters (All / Lost / Found / Claimed) and statistics
+- Tap a photo to enlarge it
+- **Admin login**: only the admin can mark items as claimed, edit them or delete them (with an "Are you sure?" confirmation)
+- Help chatbot that answers common questions about using the portal
+- Responsive design in the university's red and white colours
 
-In the project directory, you can run:
+## Tech Stack
+- React (Create React App)
+- Fetch API for talking to the backend
+- Spring Boot REST API + MySQL (separate backend repository)
 
-### `npm start`
+## Requirements
+- Node.js 16 or newer
+- The backend running on `http://localhost:8080`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## How to Run
+1. Start the backend first (see the backend repository's README).
+2. Install the dependencies:
+   ```
+   npm install
+   ```
+3. Start the app:
+   ```
+   npm start
+   ```
+4. Open http://localhost:3000
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Admin Login (demo)
+Click **Admin Login** in the menu.
 
-### `npm test`
+- Username: `admin`
+- Password: `admin123`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Only the admin can mark items as claimed, edit and delete them. Everyone else can report and view items.
 
-### `npm run build`
+## Configuration
+The backend address is set at the top of `src/App.js`. To use a different address, create a `.env` file in the project root:
+```
+REACT_APP_API_URL=http://localhost:8080/api/items
+```
+Restart `npm start` after changing it.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Optional: campus photo in the banner
+Save a photo as `public/campus.jpg` and it appears faintly behind the title.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Structure
+```
+src/
+  App.js        main app (pages, forms, admin login, matching)
+  Chatbot.js    help chatbot
+  index.js      entry point
+  index.css     global styles
+  logo.png      university logo
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Author
+Hania Fathima – B.Tech Data Science, Anurag University
