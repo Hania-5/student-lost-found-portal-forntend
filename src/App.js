@@ -2,8 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import logo from "./logo.png";
 import Chatbot from "./Chatbot";
 
+
 const API_URL =
-  process.env.REACT_APP_API_URL || "http://localhost:8080/api/items";
+  process.env.REACT_APP_API_URL ||
+  "https://student-lost-and-found-portal-backend-production.up.railway.app/api/items";
 
 // Admin endpoints live next to the items endpoints (/api/admin)
 const ADMIN_URL = API_URL.replace(/\/items$/, "/admin");
